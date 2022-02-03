@@ -4,12 +4,8 @@ const port = 3000;
 const fetch = require("node-fetch")
 
 require('dotenv').config()
-
 const HOST = process.env.RAPIDAPI_HOST
 const KEY = process.env.RAPIDAPI_KEY
-
-
-
 
 app.use(express.static("public"))
 

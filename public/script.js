@@ -12,6 +12,7 @@ async function getDinoName() {
 
     let dinoName = data[0].join(" ")
     console.log(dinoName);
+    document.querySelector("#dinoName").textContent = dinoName
 }
 
 async function getDinoImage() {
@@ -19,6 +20,13 @@ async function getDinoImage() {
 
     const data = await response.json()
 
-    let dinoImage = data.value[0].thumbnailUrl
-    console.log(dinoImage);
+    let dinoImage = data.value[Math.floor(Math.random() * data.value.length)]
+    let dinoImageUrl = dinoImage.thumbnailUrl
+    let dinoAlt = dinoImage.name
+    console.log(dinoImageUrl);
+
+    let img = document.createElement("img")
+    img.src = dinoImageUrl
+    img.alt = dinoAlt
+    document.querySelector("body").appendChild(img)
 }
