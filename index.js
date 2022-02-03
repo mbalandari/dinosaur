@@ -24,7 +24,7 @@ app.get("/dinoname", async (request, response) => {
 })
 
 app.get("/dinoimage", async (request, response) => {
-    const fetchApi = await fetch(`https://${HOST}/images/search?q=dinosaur&count=10`, {
+    const fetchApi = await fetch(`https://${HOST}/images/search?q=dinosaur&count=20`, {
         "method": "GET",
         "headers": {
             "x-rapidapi-host": `${HOST}`,
