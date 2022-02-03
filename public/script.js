@@ -25,8 +25,13 @@ async function getDinoImage() {
     let dinoAlt = dinoImage.name
     console.log(dinoImageUrl);
 
+    if (document.querySelector("#dinoImg")) {
+        document.querySelector("#dinoImg").remove()
+    }
+
     let img = document.createElement("img")
     img.src = dinoImageUrl
     img.alt = dinoAlt
+    img.id = "dinoImg"
     document.querySelector("body").appendChild(img)
 }
