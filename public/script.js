@@ -1,10 +1,13 @@
-console.log("client side!");
+document.querySelector("#btn-load").addEventListener('click', () => {
+    getDinoName()
+})
 
-getDinoName()
 
 async function getDinoName() {
     const response = await fetch("/dinoname")
 
     const data = await response.json()
-    console.log(data);
+
+    let dinoName = data[0].join(" ")
+    console.log(dinoName);
 }
